@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.WeatherFragment">
+
+    <RelativeLayout
+        android:id="@+id/parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- TODO: Update blank fragment layout -->
+        <LinearLayout
+            android:id="@+id/timedata_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <TextView
+                android:id="@+id/lat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="lat" />
+
+            <TextView
+                android:id="@+id/lon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="lon" />
+
+            <TextView
+                android:id="@+id/timezone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="timezone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/current_dada_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timedata_layout"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dt" />
+
+            <TextView
+                android:id="@+id/sunrise"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sunrise" />
+
+            <TextView
+                android:id="@+id/sunset"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sunset" />
+
+            <TextView
+                android:id="@+id/temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="temp" />
+
+            <TextView
+                android:id="@+id/feels_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="feels_like" />
+
+            <TextView
+                android:id="@+id/pressure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pressure" />
+
+            <TextView
+                android:id="@+id/humidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="humidity" />
+
+            <TextView
+                android:id="@+id/dew_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dew_point" />
+
+            <TextView
+                android:id="@+id/uvi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="uvi" />
+
+            <TextView
+                android:id="@+id/clouds"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="clouds" />
+
+            <TextView
+                android:id="@+id/visibility"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="visibility" />
+
+            <TextView
+                android:id="@+id/wind_speed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wind_speed" />
+
+            <TextView
+                android:id="@+id/wind_deg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wind_deg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/weather_subdata_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/current_dada_layout"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <TextView
+                android:id="@+id/id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="id" />
+
+            <TextView
+                android:id="@+id/main"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="main" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="description" />
+
+            <TextView
+                android:id="@+id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="icon" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/minutely_data_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/weather_subdata_layout"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/dtminutly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dt" />
+
+            <TextView
+                android:id="@+id/precipitation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="precipitation" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/hourly_data_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/minutely_data_layout"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dthourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dt" />
+
+            <TextView
+                android:id="@+id/sunrisehourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sunrise" />
+
+            <TextView
+                android:id="@+id/sunsethourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sunset" />
+
+            <TextView
+                android:id="@+id/temphourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="temp" />
+
+            <TextView
+                android:id="@+id/feels_likehourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="feels_like" />
+
+            <TextView
+                android:id="@+id/pressurehourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pressure" />
+
+            <TextView
+                android:id="@+id/humidityhourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="humidity" />
+
+            <TextView
+                android:id="@+id/dew_pointhourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dew_point" />
+
+            <TextView
+                android:id="@+id/uvihourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="uvi" />
+
+            <TextView
+                android:id="@+id/cloudshourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="clouds" />
+
+            <TextView
+                android:id="@+id/visibilityhourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="visibility" />
+
+            <TextView
+                android:id="@+id/wind_speedhourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wind_speed" />
+
+            <TextView
+                android:id="@+id/wind_deghourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wind_deg" />
+
+            <LinearLayout
+                android:id="@+id/weather_subdata_layouthourly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/current_dada_layout"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/idhourly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="id" />
+
+                <TextView
+                    android:id="@+id/mainhourly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="main" />
+
+                <TextView
+                    android:id="@+id/descriptionhourly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="description" />
+
+                <TextView
+                    android:id="@+id/iconhourly"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="icon" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/pophourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pop" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/current_dada_layoutdaily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hourly_data_layout"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dtdaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dt" />
+
+            <TextView
+                android:id="@+id/sunrisedaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sunrise" />
+
+            <TextView
+                android:id="@+id/sunsetdaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="sunset" />
+
+            <TextView
+                android:id="@+id/moonrisedaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="moonrise" />
+
+            <TextView
+                android:id="@+id/moonsetdaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="moonset" />
+
+            <TextView
+                android:id="@+id/moon_phasedaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="moon_phase" />
+
+            <LinearLayout
+                android:id="@+id/tempData_sub_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/day_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="day" />
+
+                <TextView
+                    android:id="@+id/min_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="min" />
+
+                <TextView
+                    android:id="@+id/max_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="max" />
+
+                <TextView
+                    android:id="@+id/night_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="night" />
+
+                <TextView
+                    android:id="@+id/eve_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="eve" />
+
+                <TextView
+                    android:id="@+id/morn_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="morn" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/feels_like_sub_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/day_feels_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="day" />
+
+                <TextView
+                    android:id="@+id/night_feels_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="night" />
+
+                <TextView
+                    android:id="@+id/eve_feels_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="eve" />
+
+                <TextView
+                    android:id="@+id/morn_feels_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="morn" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/pressuredaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pressure" />
+
+            <TextView
+                android:id="@+id/humiditydaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="humidity" />
+
+            <TextView
+                android:id="@+id/dew_pointdaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="dew_point" />
+
+            <TextView
+                android:id="@+id/visibilitydaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="visibility" />
+
+            <TextView
+                android:id="@+id/wind_speeddaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wind_speed" />
+
+            <TextView
+                android:id="@+id/wind_degdaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wind_deg" />
+
+            <TextView
+                android:id="@+id/wind_gustdaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="wind gust" />
+
+            <LinearLayout
+                android:id="@+id/weather_subdata_layout_daily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/current_dada_layout"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <TextView
+                    android:id="@+id/iddaily"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="id" />
+
+                <TextView
+                    android:id="@+id/maindaily"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="main" />
+
+                <TextView
+                    android:id="@+id/descriptiondaily"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="description" />
+
+                <TextView
+                    android:id="@+id/icondaily"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="icon" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/cloudsdaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="clouds" />
+
+            <TextView
+                android:id="@+id/popsdaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pop" />
+
+            <TextView
+                android:id="@+id/uvidaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="uvi" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

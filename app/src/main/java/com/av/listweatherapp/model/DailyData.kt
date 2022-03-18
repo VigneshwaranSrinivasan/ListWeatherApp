@@ -1,0 +1,21 @@
+package com.av.listweatherapp.model
+
+data class DailyData(val dt: Double,
+                     val sunrise: Double,
+                     val sunset: Double,
+                     val moonrise:Double,
+                     val moonset:Double,
+                     val moon_phase:Double,
+                     val temp: List<TempData>,
+                     val feelslike: List<FeelslikeData>,
+                     val pressure: Double,
+                     val humidity: Double,
+                     val dew_point: Double,
+                     val visibility: Int,
+                     val wind_speed: Double,
+                     val wind_deg: Double,
+                     val wind_gust : Double,
+                     val weather: List<WeatherSubData>,
+                     val clouds: Int,
+                     val pop: Int,
+                     val uvi: Int)
